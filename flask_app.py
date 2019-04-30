@@ -3,7 +3,7 @@ from flask import Flask
 from flask import jsonify
 import pandas as pd
 import numpy as np
-import request from flask
+from flask import request
 
 
 app = Flask(__name__)

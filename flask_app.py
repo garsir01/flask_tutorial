@@ -12,7 +12,7 @@ app.config["DEBUG"] = True
 @app.route("/")
 def hello():
 	return "f u"
-@app.route("/api, methods=["POST"])")
+@app.route("/api, methods=["POST"]")
 def outputdata():
 	data = request.get_json()
 	return data

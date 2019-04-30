@@ -14,7 +14,7 @@ def hello():
 	return "f u"
 @app.route("/api, methods=["POST"])")
 def outputdata():
-	data = request.form()
+	data = request.get_json()
 	return data
 
 

@@ -3,6 +3,8 @@ from flask import Flask
 from flask import jsonify
 import pandas as pd
 import numpy as np
+import request from flask
+
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -10,7 +12,17 @@ app.config["DEBUG"] = True
 @app.route("/")
 def hello():
 	return "f u"
-@app.route("/api")
+@app.route("/api, methods=["POST"])")
 def outputdata():
-	data = pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD'))
-	return data.to_json()
+	data = request.form()
+	return data
+
+
+   
+    #You will need to adapt your app routing to `@app.route("/api", methods=["POST"])`
+    #POSTed JSON is available from request.form (treat it like a dictionary).
+    #Test on your local server, anything you print will be visible in the logs.
+    #When you're ready, deploy and test against your production server.
+
+
+

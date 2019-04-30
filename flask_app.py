@@ -15,8 +15,9 @@ def hello():
 @app.route("/api", methods=["POST"])
 def outputdata():
 	data = {'me':'you'}
-	data = request.get_json()
-	return data
+	data = request.get_json(force=True)
+	print(data)	
+	return jsonify(data)
 
 
    

@@ -25,7 +25,7 @@ class User(db.Model):
 @app.route("/")
 def hello():
 	
-	api_request = User(id=i, username="bob", email="bob@gmail.com")
+	api_request = User( username="bob", email="bob@gmail.com")
 	db.session.add(api_request)
 	db.session.commit()
 	return "f u"
